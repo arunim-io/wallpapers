@@ -1,4 +1,4 @@
-name:
+name: Fetch APOD
 
 on:
   schedule:
@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  update-data:
+  fetch:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
