@@ -60,7 +60,8 @@ def download_apod(apod: APOD):
     for _, _, files in os.walk(os.getcwd()):
         for file in files:
             if file == file_name:
-                raise FileExistsError(f"File {file_name} already exists.")
+                print(f"File {file_name} already exists.")
+                exit()
 
     try:
         with httpx.stream("GET", apod.url) as response:
