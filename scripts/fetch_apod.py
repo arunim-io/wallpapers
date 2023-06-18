@@ -13,9 +13,9 @@ class APOD(JSONWizard):
     title: str
     explanation: str
     date: str
-    hdurl: str
+    hdurl: Optional[str]
     service_version: str
-    copyright: str
+    copyright: Optional[str]
     media_type: str
     url: str
     credit: Optional[str] = None
