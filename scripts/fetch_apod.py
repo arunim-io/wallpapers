@@ -13,9 +13,9 @@ class APOD(JSONWizard):
     title: str
     explanation: str
     date: str
-    hdurl: Optional[str]
+    hdurl: Optional[str] = None
     service_version: str
-    copyright: Optional[str]
+    copyright: Optional[str] = None
     media_type: str
     url: str
     credit: Optional[str] = None
@@ -64,7 +64,7 @@ def download_apod(apod: APOD):
                 exit()
 
     try:
-        with httpx.stream("GET", apod.url) as response:
+        with httpx.stream("GET", apod.hdurl or apod.url) as response:
             with open(file_path, "wb") as file:
                 for chunk in response.iter_bytes():
                     file.write(chunk)
