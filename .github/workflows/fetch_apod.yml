@@ -16,7 +16,7 @@ jobs:
         with:
           python-version: "3.11"
       - name: Install Dependencies
-        run: pip install httpx dataclass_wizard
+        run: pip install httpx tqdm
       - name: Run script
         run: python scripts/fetch_apod.py
       - name: Commit changes
